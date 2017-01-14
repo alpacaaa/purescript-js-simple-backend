@@ -1,5 +1,10 @@
 module Syntax where
 
+{--|
+  This is just a bunch of stuff from the PS compiler that will come in handy
+--}
+
+
 literalToJSON :: (a -> Value) -> Literal a -> Value
 literalToJSON _ (NumericLiteral (Left n)) = toJSON ("IntLiteral", n)
 literalToJSON _ (NumericLiteral (Right n)) = toJSON ("NumberLiteral", n)

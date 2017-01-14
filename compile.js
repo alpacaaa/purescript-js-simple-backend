@@ -65,8 +65,22 @@ const compilers = {
       return ['[', arr, ']'].join("\n")
     }
 
-    if (type === 'IntLiteral') {
+    if (
+      type === 'IntLiteral'
+      || type === 'NumberLiteral'
+    ) {
       return fields
+    }
+
+    if (
+      type === 'StringLiteral'
+      || type === 'CharLiteral'
+    ) {
+      return '"' + fields + '"'
+    }
+
+    if (type === 'BooleanLiteral') {
+      return fields ? 'true' : 'false'
     }
   }
 }
