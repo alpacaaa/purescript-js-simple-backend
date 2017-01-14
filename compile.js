@@ -47,6 +47,8 @@ const compilerForExpr = type => {
 const compilers = {
   Literal: require('./lib/literal'),
   Constructor: require('./lib/constructor'),
+  Accessor: require('./lib/accessor'),
+  Abs: require('./lib/abs'),
 }
 
 
