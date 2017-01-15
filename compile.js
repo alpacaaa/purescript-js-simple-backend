@@ -43,21 +43,27 @@ const compilerForExpr = type => {
 }
 
 
-
+const Binder = require('./lib/binder')
 
 const compilers = {
   Literal: require('./lib/literal'),
-  Constructor: require('./lib/constructor'),
   Accessor: require('./lib/accessor'),
   Abs: require('./lib/abs'),
   App: require('./lib/app'),
   Var: require('./lib/var'),
   Let: require('./lib/let'),
   Case: require('./lib/case'),
+  Constructor: require('./lib/constructor'),
+
+  VarBinder: Binder('VarBinder'),
+  NullBinder: Binder('NullBinder'),
+  NamedBinder: Binder('NamedBinder'),
+  LiteralBinder: Binder('LiteralBinder'),
+  ConstructorBinder: Binder('ConstructorBinder'),
 }
 
 
 const dump = JSON.parse(fs.readFileSync('test.json'))
 
 const result = compileModule('Something', dump.Something)
-// console.log(result)
+console.log(result)
