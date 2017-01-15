@@ -53,9 +53,11 @@ const compilers = {
   App: require('./lib/app'),
   Var: require('./lib/var'),
   Let: require('./lib/let'),
+  Case: require('./lib/case'),
 }
 
 
 const dump = JSON.parse(fs.readFileSync('test.json'))
 
-console.log(compileModule('Something', dump.Something))
+const result = compileModule('Something', dump.Something)
+// console.log(result)
