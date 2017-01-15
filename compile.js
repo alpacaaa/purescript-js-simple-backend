@@ -4,6 +4,7 @@ const fs = require('fs')
 const clean = s => s.replace(/\./g, '_')
 
 const identifier = moduleName => id => {
+  return clean(id)
   return [moduleName, id].map(clean).join('_')
 }
 
@@ -49,6 +50,8 @@ const compilers = {
   Constructor: require('./lib/constructor'),
   Accessor: require('./lib/accessor'),
   Abs: require('./lib/abs'),
+  App: require('./lib/app'),
+  Var: require('./lib/var'),
 }
 
 
