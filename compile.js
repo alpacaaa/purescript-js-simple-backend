@@ -52,6 +52,7 @@ const compilers = {
   Abs: require('./lib/abs'),
   App: require('./lib/app'),
   Var: require('./lib/var'),
+  Let: require('./lib/let'),
 }
 
 
